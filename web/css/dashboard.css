@@ -1,0 +1,15 @@
+body { 
+    padding-top: 6%; 
+}
+
+#saludo{
+    color: white;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.dashboardWidget{
+    cursor: pointer;
+}
