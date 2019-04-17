@@ -74,6 +74,57 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="modificarCicloModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modificar ciclo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="annoCicloMod">Año</label>
+                                            <input type="text" class="form-control" id="annoCicloMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="numeroCicloMod">Número</label>
+                                            <input type="text" class="form-control" id="numeroCicloMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="fechaInicioCicloMod">Fecha de inicio</label>
+                                            <input type="text" class="form-control datepicker-here" id="fechaInicioCicloMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="fechaFinalCicloMod">Fecha de finalización</label>
+                                            <input type="text" class="form-control datepicker-here" id="fechaFinalCicloMod">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-outline-success">Agregar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -95,6 +146,14 @@
     });
 
     $('#fechaFinalCiclo').datepicker({
+        language: 'es'
+    });
+
+    $('#fechaInicioCicloMod').datepicker({
+        language: 'es'
+    });
+
+    $('#fechaFinalCicloMod').datepicker({
         language: 'es'
     });
 </script>

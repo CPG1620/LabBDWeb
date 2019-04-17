@@ -74,5 +74,55 @@
                 </div>
             </div>
         </div>
+        
+        <div id="modificarProfesorModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modificar profesor</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="cedulaProfesorMod">Cédula</label>
+                                            <input type="text" class="form-control" id="cedulaProfesorMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="nombreProfesorMod">Nombre</label>
+                                            <input type="text" class="form-control" id="nombreProfesorMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="numeroProfesorMod">Número</label>
+                                            <input type="text" class="form-control" id="numeroProfesorMod">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="correoProfesorMod">Email</label>
+                                            <input type="text" class="form-control" id="correoProfesorMod">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-outline-success">Agregar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
