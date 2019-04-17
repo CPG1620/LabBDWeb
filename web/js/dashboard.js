@@ -9,7 +9,7 @@ function InitEvents() {
     });
 
     var divs = $(".dashboardWidget");
-    $.each(divs, function (index, value){
+    $.each(divs, function (index, value) {
         value.onclick = EvtChangePage;
     });
 }

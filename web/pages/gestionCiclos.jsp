@@ -23,9 +23,9 @@
         <div>
             <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#annadirCicloModal">Añadir</button>
         </div>
-        
+
         <!-- Modals -->
-        <div id="annadirCicloModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div id="annadirCicloModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -53,17 +53,17 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="fechaInicioCiclo">Fecha de inicio</label>
-                                            <input type="text" class="form-control" id="fechaInicioCiclo">
+                                            <input type="text" class="form-control datepicker-here" id="fechaInicioCiclo">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="fechaFinalCiclo">Fecha de finalización</label>
-                                            <input type="text" class="form-control" id="fechaFinalCiclo">
+                                            <input type="text" class="form-control datepicker-here" id="fechaFinalCiclo">
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
                                     <button type="submit" class="btn btn-outline-success">Agregar</button>
@@ -76,3 +76,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    $.fn.datepicker.language['es'] = {
+        days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+        daysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        daysMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
+        months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        dateFormat: 'dd/mm/yyyy',
+        firstDay: 0
+    };
+
+    $('#fechaInicioCiclo').datepicker({
+        language: 'es'
+    });
+
+    $('#fechaFinalCiclo').datepicker({
+        language: 'es'
+    });
+</script>
