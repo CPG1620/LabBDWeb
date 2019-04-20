@@ -1,8 +1,11 @@
-<%-- 
-    Document   : gestionCiclos
-    Created on : 21-mar-2019, 22:58:46
-    Author     : caleb
---%>
+<%@ page import="LogicaDeNegocio.Ciclo"%>
+<%@ page import="Controlador.Control"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Collection"%>
+<% Control control = Control.getControl();
+   ArrayList list = (ArrayList)control.listarCiclo();
+%>
+
 <div>
     <h3>Gestión de ciclos</h3>
     <div class="table-responsive">
@@ -18,6 +21,18 @@
                 </tr>
             </thead>
             <tbody>
+                <%
+                    for (int i = 0; i < list.size(); i++){
+                    Ciclo ciclo = (Ciclo)list.get(i);%>
+                  <tr>
+                      <td><%=ciclo.getAnno()%></td>
+                      <td><%=ciclo.getNum_ciclo()%></td>
+                      <td><%=ciclo.getFecha_inicio()%></td>
+                      <td><%=ciclo.getFecha_final()%></td>
+                      <td><button type="button" class="btn btn-primary btnModificar" data-toggle="modal" data-target="#modificarCicloModal">Modificar</button></td>
+                      <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button></td>
+                  </tr>
+            <%}%>
             </tbody>
         </table>
         <div>
@@ -129,7 +144,7 @@
 </div>
 
 <script>
-    $.fn.datepicker.language['es'] = {
+     $.fn.datepicker.language['es'] = {
         days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
         daysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
         daysMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],

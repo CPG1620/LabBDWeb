@@ -1,8 +1,10 @@
-<%-- 
-    Document   : gestionCarreras
-    Created on : 21-mar-2019, 22:56:04
-    Author     : caleb
---%>
+<%@ page import="LogicaDeNegocio.Carrera"%>
+<%@ page import="Controlador.Control"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Collection"%>
+<% Control control = Control.getControl();
+   ArrayList list = (ArrayList)control.listarCarrera();
+%>
 <div>
     <h3>Gestión de carreras</h3>
     <div class="table-responsive">
@@ -13,13 +15,24 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Título</th>
                     <th scope="col">Cursos</th>
-                    <th scope="col">Año</th>
-                    <th scope="col">Ciclo</th>
                     <th scope="col">Modificar</th>
                     <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
+            <%
+                    for (int i = 0; i < list.size(); i++){
+                    Carrera carrera = (Carrera)list.get(i);
+            %>
+                  <tr>
+                      <td><%=carrera.getCodigo()%></td>
+                      <td><%=carrera.getNombre()%></td>
+                      <td><%=carrera.getTitulo()%></td>
+                      <td></td>
+                      <td><button type="button" class="btn btn-primary btnModificar" data-toggle="modal" data-target="#modificarCarreraModal">Modificar</button></td>
+                      <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button></td>
+                  </tr>
+            <%}%>
             </tbody>
         </table>
 
@@ -59,21 +72,10 @@
                                             <input type="text" class="form-control" id="tituloCarrera">
                                         </div>
                                     </div>
-                                    <div class="col-sm-2">
-                                        <div class="form-group">
-                                            <label for="annoCarrera">Año</label>
-                                            <input type="text" class="form-control" id="annoCarrera">
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="cursoCarrera">Cursos</label>
                                     <!-- MANTENIMIENTO DE CURSOS -->
-                                </div>
-                                <!-- Traerse el año de todos los ciclos registrados en el sistema -->
-                                <div class="form-group">
-                                    <label for="cicloCarrera">Ciclo</label>
-                                    <select id="cicloCarrera"></select>
                                 </div>
 
                                 <div class="modal-footer">
@@ -118,23 +120,11 @@
                                             <input type="text" class="form-control" id="tituloCarreraMod">
                                         </div>
                                     </div>
-                                    <div class="col-sm-2">
-                                        <div class="form-group">
-                                            <label for="annoCarreraMod">Año</label>
-                                            <input type="text" class="form-control" id="annoCarreraMod">
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="cursoCarrera">Cursos</label>
                                     <!-- MANTENIMIENTO DE CURSOS -->
                                 </div>
-                                <!-- Traerse el año de todos los ciclos registrados en el sistema -->
-                                <div class="form-group">
-                                    <label for="cicloCarrera">Ciclo</label>
-                                    <select id="cicloCarrera"></select>
-                                </div>
-
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
                                     <button type="submit" class="btn btn-outline-success">Agregar</button>

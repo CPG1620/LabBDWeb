@@ -1,8 +1,10 @@
-<%-- 
-    Document   : gestionProfesores
-    Created on : 21-mar-2019, 22:59:56
-    Author     : caleb
---%>
+<%@ page import="LogicaDeNegocio.Profesor"%>
+<%@ page import="Controlador.Control"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Collection"%>
+<% Control control = Control.getControl();
+    ArrayList list = (ArrayList) control.listarProfesores();
+%>
 <div>
     <h3>Gestión de profesores</h3>
     <div class="table-responsive">
@@ -18,6 +20,18 @@
                 </tr>
             </thead>
             <tbody>
+                  <%
+                     for (int i = 0; i < list.size(); i++) {
+                         Profesor profesor = (Profesor) list.get(i);%>
+                <tr>
+                    <td><%=profesor.getCedula()%></td>
+                    <td><%=profesor.getNombre()%></td>
+                    <td><%=profesor.getTelefono()%></td>
+                    <td><%=profesor.getEmail()%></td>
+                    <td><button type="button" class="btn btn-primary btnModificar" data-toggle="modal" data-target="#modificarProfesorModal">Modificar</button></td>
+                    <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button></td>
+                </tr>
+                <%}%>
             </tbody>
         </table>
         <div>

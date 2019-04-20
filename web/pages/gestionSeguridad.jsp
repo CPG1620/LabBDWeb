@@ -1,8 +1,10 @@
-<%-- 
-    Document   : gestionSeguridad
-    Created on : 21-mar-2019, 23:00:12
-    Author     : caleb
---%>
+<%@ page import="LogicaDeNegocio.Rol"%>
+<%@ page import="Controlador.Control"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Collection"%>
+<% Control control = Control.getControl();
+    ArrayList list = (ArrayList) control.listarRol();
+%>
 <div>
     <h3>Gestión de seguridad</h3>
     <div class="table-responsive">
@@ -15,6 +17,15 @@
                 </tr>
             </thead>
             <tbody>
+                <%
+                     for (int i = 0; i < list.size(); i++) {
+                         Rol rol = (Rol) list.get(i);%>
+                <tr>
+                    <td><%=rol.getRol()%></td>
+                    <td><button type="button" class="btn btn-primary btnModificar" data-toggle="modal" data-target="#modificarRolModal">Modificar</button></td>
+                    <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button></td>
+                </tr>
+                <%}%>
             </tbody>
         </table>
         <div>
